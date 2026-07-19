@@ -1,0 +1,15 @@
+- query: "How do metadata filters improve RAG retrieval?"
+  relevant_docs:
+    - architecture.md
+  filters:
+    source_type: docs
+- query: "How should retrieval quality be measured?"
+  relevant_docs:
+    - evaluation.md
+  filters:
+    source_type: docs
+- query: "How can MLflow runs support experiment discovery?"
+  relevant_docs:
+    - mlflow.md
+  filters:
+    source_type: docs

@@ -1,0 +1,41 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    volumes:
+      - ./examples:/app/examples:ro
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: recallops
+      POSTGRES_PASSWORD: recallops
+      POSTGRES_DB: recallops
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U recallops -d recallops"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - recallops-postgres:/var/lib/postgresql/data
+
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - recallops-qdrant:/qdrant/storage
+
+volumes:
+  recallops-postgres:
+  recallops-qdrant:

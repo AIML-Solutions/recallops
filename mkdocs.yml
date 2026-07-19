@@ -1,0 +1,14 @@
+site_name: RecallOps
+site_description: Metadata-aware ANN retrieval for ML research and RAG workflows.
+theme:
+  name: material
+nav:
+  - Home: README.md
+  - Architecture: docs/architecture.md
+  - Ingestion: docs/ingestion.md
+  - Metadata Model: docs/metadata-model.md
+  - Search: docs/search.md
+  - Evaluation: docs/evaluation.md
+  - arXiv Ingestion: docs/arxiv-ingestion.md
+  - MLflow Indexing: docs/mlflow-indexing.md
+  - Operations: docs/operations.md
