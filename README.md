@@ -275,6 +275,11 @@ make test
 
 RecallOps is structured as a service that can be attached to internal systems. Organization-specific deployments should add authentication, authorization, retention policy, audit logging, and access enforcement before indexing restricted content into shared collections.
 
+## Related
+
+- [triage-mesh](https://github.com/AIML-Solutions/triage-mesh) — security-first multi-agent system over MCP + A2A; the kind of agentic consumer RecallOps feeds context to
+- [multiclaw-harness](https://github.com/AIML-Solutions/multiclaw-harness) — regression harnesses for the agent workflows built on retrieval like this
+
 ## License
 
 MIT
